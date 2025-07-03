@@ -1,0 +1,160 @@
+@import '../../styles.scss';
+
+.items__container {
+    width: 100%;
+}
+
+.header__extension {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem 0 3rem 0;
+    align-items: center;
+}
+
+.header--title {
+    font-family: $fontMain;
+    font-size: 3.3rem;
+    margin: 0;
+    color: var(--textName);
+}
+
+.header__container--buttons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header--btn {
+    background-color: var(--cardBackground);
+    border: none;
+    border-radius: 24px;
+    padding: 1rem 1.7rem;
+    font-size: 1.5rem;
+    color: var(--textName);
+    box-shadow: var(--borderCard);
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--hoverButton);
+        color: var(--textDescription);
+    }
+
+    &:focus{
+        border: 2px solid var(--redActive);
+        outline: none;
+    }
+}
+
+.cards__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.card {
+    background-color: var(--cardBackground);
+    border-radius: 16px;
+    box-shadow: var(--borderCard);
+    padding: 1.5rem;
+    height: 18rem;
+}
+
+.card__container--txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card__container--top {
+    display: flex;
+    align-items: center;
+
+    .card--txt {
+        .card--title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--textName);
+            margin: 0;
+        }
+
+        .card--description {
+            font-size: 1.1rem;
+            color: var(--textDescription);
+        }
+    }
+}
+
+.card__container--bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .cardBtn--remove {
+        border-radius: 16px;
+        border: 1px solid var(--grayInactive);
+        background-color: var(--cardBackground);
+        font-size: 1.3rem;
+        font-weight: 400;
+        padding: .7rem 1.2rem;
+        cursor: pointer;
+        height: 3rem;
+        &:hover {
+            background-color: var(--redActive);
+            color: var(--cardBackground);
+        }
+        &:focus{
+            border: 2px solid var(--redActive);
+            outline: none;
+        }
+    }
+
+    .switchActive {
+        position: relative;
+        display: inline-block;
+        width: 4rem;
+        height: 2.2rem;
+        display: flex;
+        align-items: center;
+        input {
+            position: absolute;
+            opacity: 0;
+            width: 4rem;
+            height: 2rem;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            background-color: var(--redActive);
+            border-radius: 3.4rem;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: 0.4s;
+
+            &::before {
+                position: absolute;
+                content: "";
+                height: 1.5rem;
+                width: 1.5rem;
+                left: .4rem;
+                bottom: .35rem;
+                background-color: var(--cardBackground);
+                transition: 0.4s;
+                border-radius: 50%;
+            }
+        }
+
+        input:checked + .slider {
+            background-color: green;
+
+            &::before {
+                transform: translateX(1.7rem);
+            }
+        }
+    }
+}
