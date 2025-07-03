@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'normalize.css';
+
+// ---------------------------------------------- VARIABLES ----------------------------------------------
+$backgrounLight: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+$backgroundDark: linear-gradient(180deg, #040918 0%, #091540 100%);
+$light-theme: (
+    backgroundTheme: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%),
+    cardBackground: hsl(200, 60%, 99%),
+    textName: hsl(227, 75%, 14%),
+    textDescription: hsl(226, 11%, 37%),
+    redActive:hsl(3, 77%, 44%),
+    textButtonCard: hsl(226, 25%, 17%),
+    grayInactive: hsl(0, 0%, 78%),
+    borderCard: hsl(226, 11%, 37%)
+);
+
+$dark-theme: (
+    backgroundTheme: linear-gradient(180deg, #040918 0%, #091540 100%),
+    cardBackground: hsl(225, 23%, 24%),
+    textName:hsl(217, 61%, 90%),
+    textDescription: hsl(0, 0%, 78%),
+    redActive: hsl(3, 71%, 56%),
+    textButtonCard: hsl(0, 0%, 93%),
+    grayInactive: hsl(226, 11%, 37%),
+    borderCard: hsl(226, 11%, 37%)
+);
+
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+// MIXIN
+
+@mixin theme-variables($theme-map){
+    @each $key, $value in $theme-map{
+        --#{$key}: #{$value};
+    }
+}
+
+// -------------------------------------
+
+:root{
+    @include theme-variables($light-theme);
+}
+
+.light-theme{
+    @include theme-variables($light-theme);
+}
+
+.dark-theme{
+    @include theme-variables($dark-theme);
+}
+
