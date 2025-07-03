@@ -4,6 +4,7 @@
 // ---------------------------------------------- VARIABLES ----------------------------------------------
 $backgrounLight: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
 $backgroundDark: linear-gradient(180deg, #040918 0%, #091540 100%);
+$fontMain: 'NotoSans';
 $light-theme: (
     backgroundTheme: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%),
     cardBackground: hsl(200, 60%, 99%),
@@ -12,7 +13,8 @@ $light-theme: (
     redActive:hsl(3, 77%, 44%),
     textButtonCard: hsl(226, 25%, 17%),
     grayInactive: hsl(0, 0%, 78%),
-    borderCard: hsl(226, 11%, 37%)
+    borderCard: 0 2px 6px rgba(0, 0, 0, 0.08),
+    hoverButton: hsl(0, 0%, 93%)
 );
 
 $dark-theme: (
@@ -23,9 +25,12 @@ $dark-theme: (
     redActive: hsl(3, 71%, 56%),
     textButtonCard: hsl(0, 0%, 93%),
     grayInactive: hsl(226, 11%, 37%),
-    borderCard: hsl(226, 11%, 37%)
+    borderCard: 0 2px 6px rgba(0, 0, 0, 0.08)
 );
-
+@font-face {
+    font-family: $fontMain;
+    src: url('/fonts/NotoSans-VariableFont_wdth\,wght.ttf');
+}
 
 html {
     font-size: 62.5%;
@@ -36,6 +41,10 @@ html {
 *:after,
 *:before {
     box-sizing: inherit;
+}
+
+body{
+    font-family: $fontMain;
 }
 
 // MIXIN

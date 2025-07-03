@@ -4,4 +4,31 @@
     background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
     width: 100%;
     height: 100dvh;
+    padding: 3rem 10%;
+    
+}
+
+header{
+    background-color: var(--cardBackground);
+    width: 100%;
+    height: 7rem;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: var(--borderCard);
+}
+
+.switchThemeBtn{
+    border-radius: 8px;
+    border: none;
+    padding: 1rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    &:hover{
+        background-color: var(--grayInactive);
+    }
+    &:focus{
+        border: 1px solid var(--redActive);
+    }
 }
