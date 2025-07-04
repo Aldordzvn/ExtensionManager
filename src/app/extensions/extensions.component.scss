@@ -58,6 +58,7 @@
     box-shadow: var(--borderCard);
     padding: 1.5rem;
     height: 18rem;
+    border: 1px solid var(--borderCard);
 }
 
 .card__container--txt{
@@ -91,6 +92,7 @@
     justify-content: space-between;
     align-items: center;
     .cardBtn--remove {
+        color: var(--textName);
         border-radius: 16px;
         border: 1px solid var(--grayInactive);
         background-color: var(--cardBackground);
@@ -101,7 +103,7 @@
         height: 3rem;
         &:hover {
             background-color: var(--redActive);
-            color: var(--cardBackground);
+            color: var(--textName);
         }
         &:focus{
             border: 2px solid var(--redActive);
@@ -128,7 +130,7 @@
         .slider {
             position: absolute;
             cursor: pointer;
-            background-color: var(--redActive);
+            background-color: var(--grayInactive);
             border-radius: 3.4rem;
             top: 0;
             left: 0;
@@ -143,14 +145,14 @@
                 width: 1.5rem;
                 left: .4rem;
                 bottom: .35rem;
-                background-color: var(--cardBackground);
+                background-color: hsl(217, 61%, 90%);
                 transition: 0.4s;
                 border-radius: 50%;
             }
         }
 
         input:checked + .slider {
-            background-color: green;
+            background-color: var(--redActive);
 
             &::before {
                 transform: translateX(1.7rem);

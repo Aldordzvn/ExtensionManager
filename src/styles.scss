@@ -25,8 +25,10 @@ $dark-theme: (
     redActive: hsl(3, 71%, 56%),
     textButtonCard: hsl(0, 0%, 93%),
     grayInactive: hsl(226, 11%, 37%),
-    borderCard: 0 2px 6px rgba(0, 0, 0, 0.08)
+    borderCard: rgb(255 255 255 / 24%),
+    hoverButton: hsl(226, 11%, 37%),
 );
+
 @font-face {
     font-family: $fontMain;
     src: url('/fonts/NotoSans-VariableFont_wdth\,wght.ttf');
