@@ -14,12 +14,13 @@ $light-theme: (
     textButtonCard: hsl(226, 25%, 17%),
     grayInactive: hsl(0, 0%, 78%),
     borderCard: 0 2px 6px rgba(0, 0, 0, 0.08),
-    hoverButton: hsl(0, 0%, 93%)
+    hoverButton: hsl(0, 0%, 93%),
+    buttonColor: hsl(0, 0%, 93%)
 );
 
 $dark-theme: (
     backgroundTheme: linear-gradient(180deg, #040918 0%, #091540 100%),
-    cardBackground: hsl(225, 23%, 24%),
+    cardBackground: hsl(226, 25%, 17%),
     textName:hsl(217, 61%, 90%),
     textDescription: hsl(0, 0%, 78%),
     redActive: hsl(3, 71%, 56%),
@@ -27,6 +28,7 @@ $dark-theme: (
     grayInactive: hsl(226, 11%, 37%),
     borderCard: rgb(255 255 255 / 24%),
     hoverButton: hsl(226, 11%, 37%),
+    buttonColor: hsl(225, 23%, 24%)
 );
 
 @font-face {
@@ -39,35 +41,43 @@ html {
     box-sizing: border-box;
 }
 
+html,
+body {
+    min-height: 100%;
+}
+
 *,
 *:after,
 *:before {
     box-sizing: inherit;
 }
 
-body{
+body {
     font-family: $fontMain;
+    background: var(--backgroundTheme);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
 
 // MIXIN
 
-@mixin theme-variables($theme-map){
-    @each $key, $value in $theme-map{
+@mixin theme-variables($theme-map) {
+    @each $key, $value in $theme-map {
         --#{$key}: #{$value};
     }
 }
 
 // -------------------------------------
 
-:root{
+:root {
     @include theme-variables($light-theme);
 }
 
-.light-theme{
+.light-theme {
     @include theme-variables($light-theme);
 }
 
-.dark-theme{
+.dark-theme {
     @include theme-variables($dark-theme);
 }
-

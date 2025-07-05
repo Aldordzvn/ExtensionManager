@@ -1,11 +1,10 @@
 @import '../../src/styles.scss';
 
 .items__container{
-    background: var(--backgroundTheme);
     width: 100%;
-    height: 100dvh;
-    padding: 3rem 10%;
-    
+    height: 100%;
+    padding: 3rem clamp(3rem, -26.538rem + 28.846vw, 15rem);
+    // background: var(--backgroundTheme);
 }
 
 header{
@@ -25,6 +24,7 @@ header{
     padding: 1rem;
     box-sizing: border-box;
     cursor: pointer;
+    background-color: var(--buttonColor);
     &:hover{
         background-color: var(--grayInactive);
     }
@@ -32,3 +32,11 @@ header{
         border: 1px solid var(--redActive);
     }
 }
+
+@media(min-width: 1441px){
+    .items__container{
+        padding: 3rem clamp(16rem, -35.51rem + 35.746vw, 56rem);
+    }
+}
+
+
